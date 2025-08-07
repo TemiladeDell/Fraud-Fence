@@ -7,6 +7,15 @@
 *.backup
 *.tfplan
 
+# Ignore sensitive and local Terraform files
+terraform.tfvars
+*.tfplan
+.terraform/
+terraform.tfstate
+terraform.tfstate.backup
+crash.log
+
+
 # Python cache
 __pycache__/
 *.pyc
