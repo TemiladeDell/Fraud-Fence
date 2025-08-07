@@ -6,18 +6,8 @@
 
 A serverless solution for detecting suspicious payment patterns in real-time using AWS services and Terraform for infrastructure management.
 
-## Table of Contents
+
 - [Architecture Overview](#architecture-overview)
-- [Features](#features)
-- [Project Structure](#project-structure)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Detection Logic](#detection-logic)
-- [Monitoring](#monitoring)
-- [Cleanup](#cleanup)
-- [Roadmap](#roadmap)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Architecture Overview
 
