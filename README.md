@@ -93,71 +93,50 @@ aws lambda update-function-code \
 
 
 
-Usage
-curl -X POST \
-  https://your-api-gateway-url.execute-api.region.amazonaws.com/prod/transactions \
-  -H 'Content-Type: application/json' \
-  -d '{
-    "transaction_id": "txn_789012",
-    "amount": 15000,
-    "timestamp": "2025-08-07T14:30:00Z",
-    "user_id": "user_456",
-    "payment_method": "credit_card"
-  }'
+
+Expected Responses
 
 
-  Expected Responses
 200 OK: Valid transaction processed
-
 400 Bad Request: Missing required fields
-
 202 Accepted: Transaction flagged for review
+
+
 
 Detection Logic
 The system checks for:
-
 Amount Threshold: Transactions exceeding threshold_amount
-
 Velocity Checks: >3 transactions in 5 minutes from same user
-
 Duplicate IDs: Repeated transaction IDs
-
 Geographical Anomalies: Unusual location patterns (future enhancement)
-
 Monitoring
+
+
 Key CloudWatch Metrics:
-
 Invocations - Total function executions
-
 Errors - Failed detection attempts
-
 Throttles - Rate-limiting events
-
 Duration - Processing time percentiles
 
+
 Alarms are configured for:
-
 Error rate >1% over 5 minutes
-
 Function timeout frequency
-
 SNS delivery failures
 
 
 
 Cleanup
 To remove all resources:
-
-bash
 terraform destroy
+
+
 Roadmap
 Machine Learning integration (AWS SageMaker)
-
 Multi-channel alerts (SMS, Slack)
-
 User behavior profiling
-
 Admin dashboard
+
 
 Whitelisting/blacklisting capabilities
 
